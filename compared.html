@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Illuminated.js by josher19</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/josher19/illuminated.js">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/josher19/illuminated.js/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/josher19/illuminated.js/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+     
+      <section>
+        <div id="title">
+          <h1>Illuminated.js</h1>
+          <p>Illuminated.js – 2D lights and shadows rendering engine for HTML5 applications</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/gre">gre</a> and <a href="https://github.com/josher19">josher19</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a data-href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <div id="compared">
+
+<hr/>
+
+<h1>Comparing Circles using tangents to original method</h1>
+
+<p>The <a href="http://josher19.github.com/illuminated.js/index.html#{&quot;lights&quot;:[{&quot;instance&quot;:&quot;Lamp&quot;,&quot;position&quot;:{&quot;x&quot;:337,&quot;y&quot;:218},&quot;distance&quot;:500,&quot;diffuse&quot;:0.8,&quot;color&quot;:&quot;rgba(254,202,140,0.7385237651877105)&quot;,&quot;radius&quot;:3,&quot;samples&quot;:7,&quot;angle&quot;:0,&quot;roughness&quot;:0}],&quot;objects&quot;:[{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:649,&quot;y&quot;:190},&quot;radius&quot;:37},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:338,&quot;y&quot;:152},&quot;radius&quot;:38},{&quot;instance&quot;:&quot;PolygonObject&quot;,&quot;points&quot;:[{&quot;x&quot;:214,&quot;y&quot;:75},{&quot;x&quot;:207,&quot;y&quot;:127},{&quot;x&quot;:171,&quot;y&quot;:96},{&quot;x&quot;:184,&quot;y&quot;:81}]},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:552,&quot;y&quot;:222},&quot;radius&quot;:38},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:336,&quot;y&quot;:269},&quot;radius&quot;:35},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:223,&quot;y&quot;:221},&quot;radius&quot;:63}],&quot;globals&quot;:{&quot;maskcolor&quot;:&quot;rgba(0,0,0,0.9)&quot;}}">Good</a>
+vs. <a href="http://demo.greweb.fr/illuminated.js/#{&quot;lights&quot;:[{&quot;instance&quot;:&quot;Lamp&quot;,&quot;position&quot;:{&quot;x&quot;:337,&quot;y&quot;:218},&quot;distance&quot;:500,&quot;diffuse&quot;:0.8,&quot;color&quot;:&quot;rgba(254,202,140,0.7385237651877105)&quot;,&quot;radius&quot;:3,&quot;samples&quot;:7,&quot;angle&quot;:0,&quot;roughness&quot;:0}],&quot;objects&quot;:[{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:649,&quot;y&quot;:190},&quot;radius&quot;:37},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:338,&quot;y&quot;:152},&quot;radius&quot;:38},{&quot;instance&quot;:&quot;PolygonObject&quot;,&quot;points&quot;:[{&quot;x&quot;:214,&quot;y&quot;:75},{&quot;x&quot;:207,&quot;y&quot;:127},{&quot;x&quot;:171,&quot;y&quot;:96},{&quot;x&quot;:184,&quot;y&quot;:81}]},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:552,&quot;y&quot;:222},&quot;radius&quot;:38},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:336,&quot;y&quot;:269},&quot;radius&quot;:35},{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:223,&quot;y&quot;:221},&quot;radius&quot;:63}],&quot;globals&quot;:{&quot;maskcolor&quot;:&quot;rgba(0,0,0,0.9)&quot;}}">original</a>
+-- fixes light so shardows are tangent to circles.</p>
+
+<p><img alt="Fixed Bug" src="bugs/snapshot_tangent_bug_sm.png"/> <img alt="Original Bug" src="bugs/snapshot_original_bug_sm.png"/></p>
+
+<p>The <a href="http://josher19.github.com/illuminated.js/index.html#{&quot;lights&quot;:[{&quot;instance&quot;:&quot;Lamp&quot;,&quot;position&quot;:{&quot;x&quot;:346,&quot;y&quot;:213},&quot;distance&quot;:500,&quot;diffuse&quot;:0.8,&quot;color&quot;:&quot;rgba(233,192,148,0.8347624763846397)&quot;,&quot;radius&quot;:2,&quot;samples&quot;:6,&quot;angle&quot;:0,&quot;roughness&quot;:0}],&quot;objects&quot;:[{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:346,&quot;y&quot;:170},&quot;radius&quot;:35}],&quot;globals&quot;:{&quot;maskcolor&quot;:&quot;rgba(0,0,0,0.9)&quot;}}">Ugly</a> 
+vs. <a href="http://demo.greweb.fr/illuminated.js/#{&quot;lights&quot;:[{&quot;instance&quot;:&quot;Lamp&quot;,&quot;position&quot;:{&quot;x&quot;:346,&quot;y&quot;:213},&quot;distance&quot;:500,&quot;diffuse&quot;:0.8,&quot;color&quot;:&quot;rgba(233,192,148,0.8347624763846397)&quot;,&quot;radius&quot;:2,&quot;samples&quot;:6,&quot;angle&quot;:0,&quot;roughness&quot;:0}],&quot;objects&quot;:[{&quot;instance&quot;:&quot;DiscObject&quot;,&quot;center&quot;:{&quot;x&quot;:346,&quot;y&quot;:170},&quot;radius&quot;:35}],&quot;globals&quot;:{&quot;maskcolor&quot;:&quot;rgba(0,0,0,0.9)&quot;}}">original</a>
+-- shadow is somewhat &quot;faded&quot; when directly north of bright light.</p>
+
+<p><img alt="Light Intensity" src="bugs/snapshot_tangent_bug2_sm.png"/> <img alt="Original Light Intensity" src="bugs/snapshot_original_bug2_sm.png"/></p>
+
+<hr/>
+
+        </div>
+
+        <p><strong>Illuminated.js is a 2D lights and shadows rendering engine for HTML5 applications and games.</strong></p>
+
+<p><a href="http://demo.greweb.fr/illuminated.js/">Checkout the demo</a></p>
+
+<p><a href="http://blog.greweb.fr/?p=1589">Read the article</a></p>
+
+<p><strong>src/illuminated.js</strong> should be the only file you need.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
