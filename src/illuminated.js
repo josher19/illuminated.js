@@ -271,7 +271,7 @@
   */
 
   /** Get tangents from (0,0) to circle of radius with given center, for cp.DiscObject.prototype.cast. */
-  function getTan2(radius, center) {
+  cp.getTan2 = function getTan2(radius, center) {
     var epsilon = getTan2.epsilon || 1e-6, // constant
         x0, y0, len2, soln, 
         solutions=[], a=radius;
@@ -351,7 +351,7 @@
     // var originToA = a.sub(origin);
     // var originToB = b.sub(origin);
     
-    var tangentLines = getTan2(this.radius, originToM);
+    var tangentLines = cp.getTan2(this.radius, originToM);
     var originToA = tangentLines[0];
     var originToB = tangentLines[1];
     var a = originToA.add(origin);
